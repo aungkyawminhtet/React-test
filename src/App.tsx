@@ -19,7 +19,7 @@ function App() {
       <Header />
       <Todoinput  setTodo={setTodo} todo={todo} />
       <Status todo = {todo} />
-      <TodoListgp todo={todo} />
+      <TodoListgp todo={todo} setTodo={setTodo} />
       {/* <Listgp /> */}
       {/* <Accordiongp /> */}
       {/* <Accordion /> */}

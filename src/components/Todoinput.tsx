@@ -16,6 +16,7 @@ const Todoinput: React.FC<TodoinputProps> = ({ setTodo, todo }) => {
   let newData = {
     id: id,
     item: input,
+    ischeck: false,
   };
 
   const handleAdd = () => {
@@ -28,9 +29,7 @@ const Todoinput: React.FC<TodoinputProps> = ({ setTodo, todo }) => {
       setTodo([...todo, newData]);
       setInput("");
     }
-
-    // setInput("");
-  }
+  }  
 
   return (
     <div className="mt-10 w-full mb-6">

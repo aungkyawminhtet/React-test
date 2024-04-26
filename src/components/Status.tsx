@@ -1,12 +1,16 @@
 import React from "react";
 
 interface statusProps{
-  todo: any
+  todo: {
+    id: number;
+    item: String;
+    ischeck: boolean
+  }[]
 }
 
 const Status:React.FC<statusProps> = ({todo}) => {
   const count = todo.length;
-  console.log("lenght is ", count);
+  // console.log("lenght is ", count);
   return (
     <div className="flex justify-between items-center w-full mb-5">
       <h1 className=" font-bold font-serif text-2xl">Your Lists</h1>

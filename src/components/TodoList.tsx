@@ -4,22 +4,22 @@ import logo from "../assets/logo.jpg";
 interface ToDdoProps {
   id: number;
   item: String;
+  ischeck: boolean;
+  handleCheck: (id: number) => void;
 }
 
-const handleCheck = () => {};
-
-const TodoList: React.FC<ToDdoProps> = ({ id, item }) => {
+const TodoList: React.FC<ToDdoProps> = ({ id, item, ischeck, handleCheck }) => {
   return (
     <div className="flex justify-between p-2 w-full border border-gray-700 hover:bg-gray-300 duration-200">
       <div className=" space-x-2 flex items-center">
         <input
           type="checkbox"
-          onChange={handleCheck}
-          checked={true}
-          className="w-6 h-6"
-          id="ak"
+          onChange={() => handleCheck(id)}
+          checked={ischeck}
+          className="w-5 h-5"
+          
         />
-        <label htmlFor="ak" className=" text-2xl font-serif font-bold">
+        <label htmlFor="ak" className={`text-2xl font-serif font-bold ${ischeck ? "line-through" : ""}`}>
           {item}
         </label>
       </div>
@@ -31,7 +31,7 @@ const TodoList: React.FC<ToDdoProps> = ({ id, item }) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 text-blue-600"
         >
           <path
             strokeLinecap="round"
@@ -45,7 +45,7 @@ const TodoList: React.FC<ToDdoProps> = ({ id, item }) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 text-red-600"
         >
           <path
             strokeLinecap="round"
